@@ -1,29 +1,30 @@
-# Blockchain-based-P2P-File-Sharing-System
+<h1>Blockchain-based-P2P-File-Sharing-System</h1>
+
 This project leverages blockchain technology to provide a secure, decentralized, and transparent way for users to share files directly with one another. Our platform ensures data privacy, access control, and incentivizes participation in the network. Secure file sharing or exploring the potential of blockchain in decentralized applications.
-In the context of Data Share, an individual unit within a blockchain possesses the following composition:
+In the context of our platform, an individual unit within a blockchain possesses the following composition:
 
 Each Block encompasses the following components:
 
-Block Identifier - This is a simple numeric representation denoting the sequential order of the block. Block 0 signifies the inception point, often referred to as the genesis block.
+<ul>Block Identifier - This is a simple numeric representation denoting the sequential order of the block. Block 0 signifies the inception point, often referred to as the genesis block.</ul>
 
-Timestamp - This field signifies the exact moment when the block was created and subsequently appended to the blockchain.
+<ul>Timestamp - This field signifies the exact moment when the block was created and subsequently appended to the blockchain.</ul>
 
-Proof (Nonce) - Referred to as a nonce, it stands for "number used only once." The nonce is a numerical value incorporated into an encrypted block within the blockchain. When this block is rehashed, it must satisfy specific difficulty level criteria. Altering the nonce allows for variation in the generated hash, enabling the creation of a new block.
+<ul>Proof (Nonce) - Referred to as a nonce, it stands for "number used only once." The nonce is a numerical value incorporated into an encrypted block within the blockchain. When this block is rehashed, it must satisfy specific difficulty level criteria. Altering the nonce allows for variation in the generated hash, enabling the creation of a new block.</ul>
 
-Previous Block's Hash - This field encapsulates the hash value of the preceding block, in this case, Block Index 2. The SHA-256 hashing algorithm is employed to generate the hash of the entire block. This element establishes the chain of interconnected blocks, forming the bedrock of security within the blockchain architecture.
+<ul>Previous Block's Hash - This field encapsulates the hash value of the preceding block, in this case, Block Index 2. The SHA-256 hashing algorithm is employed to generate the hash of the entire block. This element establishes the chain of interconnected blocks, forming the bedrock of security within the blockchain architecture.</ul>
 
-Sender - The individual who uploads a file is required to provide their identity verification or name during the file upload process.
+<ul>Sender - The individual who uploads a file is required to provide their identity verification or name during the file upload process.</ul>
 
-Receiver - This field indicates the intended recipient of the shared information or file.
+<ul>Receiver - This field indicates the intended recipient of the shared information or file.</ul>
 
-Hash of the Shared File - Prior to upload, the provided file undergoes encryption using the file key supplied by the uploader, employing the AES encryption mechanism. Subsequently, the file is subjected to the SHA-256 hashing algorithm upon upload to IPFS (InterPlanetary File System). The hash value obtained from IPFS post-encryption is considered the hash of the shared file, which is then included within the respective block.
+<ul>Hash of the Shared File - Prior to upload, the provided file undergoes encryption using the file key supplied by the uploader, employing the AES encryption mechanism. Subsequently, the file is subjected to the SHA-256 hashing algorithm upon upload to IPFS (InterPlanetary File System). The hash value obtained from IPFS post-encryption is considered the hash of the shared file, which is then included within the respective block.</ul>
 
 
 To establish a peer-to-peer network (P2P) for the proper functioning of the blockchain, it's essential to ensure that all connected nodes operate within the same network. Access to the blockchain's data should be limited to users connected to the blockchain's P2P network exclusively. The creation of this P2P network relies on Socket Programming. We are currently developing a permissioned blockchain, which mandates that access be granted to become a part of the blockchain network. Users can obtain this access by clicking on the 'Connect to the blockchain' option displayed on the home screen.
 
 Using socket programming, the list of connected nodes undergoes real-time updates whenever a new user joins or leaves the network. These updates are then broadcasted to the entire P2P network. Once all connected nodes receive the updated list of network participants, the consensus protocol operates seamlessly whenever a new block is added or the blockchain experiences an update. Consequently, the peer-to-peer network functions efficiently and effectively.
 
-4.1.3 File Encryption Key
+<h2>1.1 File Encryption Key</h2>
 
 The file encryption key, also known as the shared key or password, plays a crucial role in enhancing the security of files within the blockchain network. It serves as a confidential communication channel between the sender and the receiver of shared files.
 
@@ -31,7 +32,7 @@ On the upload page, the uploader initiates the process of sharing a file. The fi
 
 On the download page, the receiver, armed with the valid file key provided by the sender, can access and retrieve the shared file from the blockchain onto their local computer. This file key serves as the decryption mechanism, enabling the receiver to interpret the AES-encrypted file downloaded from the IPFS network. Precision in entering the correct file key and hash is essential to ensure a smooth and successful download process.
 
-**4.2 Integration with IPFS**
+<h2>1.2 Integration with IPFS</h2>
 
 Our blockchain system is intricately connected with IPFS (InterPlanetary File System) to achieve a lightweight and scalable architecture. This symbiotic relationship between IPFS and blockchain optimizes efficiency and security.
 
@@ -39,9 +40,9 @@ Storing files directly within the blockchain would lead to excessive weight and 
 
 This approach guarantees that files are securely stored within a decentralized network provided by IPFS, maintaining accessibility through the blockchain. Retrieving a file is simplified by utilizing its unique generated hash. Consequently, IPFS effectively eliminates the bottleneck of accommodating entire files within the blockchain, streamlining the system's performance and resource utilization.
 
-**4.3 Using Cryptographic Encryption**
+<h2>1.3 Using Cryptographic Encryption</h2>
 
-**4.3.1 SHA-256 Hashing Algorithm**
+<h3>1.3.1 SHA-256 Hashing Algorithm</h3>
 
 Our blockchain system relies on the SHA-256 algorithm to generate a unique hash for each block, which is essential for chaining together blocks in a secure manner through their previous hashes. This same algorithm is employed by IPFS to generate the hash of shared files. We opt for the SHA-256 hashing algorithm due to its numerous advantages:
 
@@ -57,7 +58,7 @@ Our blockchain system relies on the SHA-256 algorithm to generate a unique hash 
 
 In essence, the SHA-256 hashing algorithm provides a robust foundation for ensuring the security and integrity of blockchain data.
 
-**4.3.2 AES Encryption**
+<h3>1.3.2 AES Encryption</h3>
 
 AES (Advanced Encryption Standard) Encryption is employed as a symmetric cryptographic encryption technique within our system. It relies on a shared key between the sender and receiver for accessing files, specifically the file key in this context. Without the implementation of AES Encryption, any user connected to the blockchain could access the file hash, and consequently, the shared file directly from IPFS.
 
